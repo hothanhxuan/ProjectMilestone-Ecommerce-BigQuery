@@ -34,6 +34,7 @@
 - Python 3.x environment (or Google Colab)
 - Python libraries: `pandas`, `google-cloud-bigquery`, `matplotlib`, `seaborn` (for visualization)
 
+
 ### 2️⃣ Example BigQuery SQL query
 
 ```sql
@@ -51,6 +52,7 @@ FROM
 WHERE
   _TABLE_SUFFIX BETWEEN '20170101' AND '20170331'
   AND totals.transactions IS NOT NULL
+```
 
 ---
 

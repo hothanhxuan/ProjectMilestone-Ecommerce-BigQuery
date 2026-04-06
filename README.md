@@ -43,7 +43,7 @@ GROUP BY month
 ORDER BY month;
 ```
 #### 💎 Queries result ####
-
+![Image](https://github.com/user-attachments/assets/bf7f5719-c7b7-4e79-9654-359a06c576ac)
 
 ### 2️⃣ Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC) ### 
 
@@ -59,6 +59,7 @@ GROUP BY trafficSource.source
 ORDER BY total_visits DESC;
 ```
 #### 💎 Queries result ####
+![Image](https://github.com/user-attachments/assets/4a43624f-d150-4231-b926-0a2836827bf1)
 
 ### 3️⃣ Revenue by traffic source by week, by month in June 2017 ###
 
@@ -99,6 +100,7 @@ select * from week_data
 order by time_type;
 ```
 #### 💎 Queries result ####
+![Image](https://github.com/user-attachments/assets/c28194b6-b33e-44bd-8573-a8be429bb0ce)
 
 ### 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017. ### 
 
@@ -139,7 +141,7 @@ full join non_purchaser_data using(month)
 order by pd.month;
 ```
 #### 💎 Queries result ####
-
+![Image](https://github.com/user-attachments/assets/95860552-160c-43d3-8604-73dc88b8dd09)
 
 ### 5️⃣ Average number of transactions per user that made a purchase in July 2017 ### 
 
@@ -156,6 +158,7 @@ WHERE product.productRevenue IS NOT NULL
 GROUP BY Month;
 ```
 #### 💎 Queries result ####
+![Image](https://github.com/user-attachments/assets/bffce8df-8f25-4835-aa01-c58833e01a26)
 
 ### 6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017 ### 
 
@@ -172,7 +175,7 @@ WHERE totals.transactions IS NOT NULL
 GROUP BY Month;
 ```
 #### 💎 Queries result ####
-
+![Image](https://github.com/user-attachments/assets/ac3c4233-3fc3-435d-a740-1f89c36c2c82)
 
 ### 7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered. ### 
 
@@ -203,7 +206,7 @@ GROUP BY other_purchased_products
 ORDER BY quantity DESC;
 ```
 #### 💎 Queries result ####
-
+![Image](https://github.com/user-attachments/assets/f6c82c41-53ef-41a5-b06d-0df7d0705dbb)
 
 ### 8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
 Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level. ### 
@@ -285,7 +288,7 @@ select
 from product_data;
 ```
 #### 💎 Queries result ####
-
+![Image](https://github.com/user-attachments/assets/5d2b5d35-10cc-4b6b-b3d4-ad9a960e0023)
 
 ---
 

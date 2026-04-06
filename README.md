@@ -1,28 +1,53 @@
 # Project 1: Understanding E-commerce User Behavior Using Google Analytics Data in BigQuery
 
-## 💡 Overview
+![Image](https://github.com/user-attachments/assets/9108ff3a-98a2-4621-9fe8-90a986c516fa)
 
-**This Project Milestone** is a data analytics project focused on understanding and analyzing user behavior for an E-commerce company. This project uses a publicly available Google Analytics dataset hosted on BigQuery to explore website traffic, conversion funnels, and marketing performance.
+**Author:** Susan Ho
+
+**Date:** 05/7/2025 
+
+**Tools Used:** SQL
+
+## 📑 Table of Contents
+
+[📌 Background & Overview](#-background--overview)  
+[📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
+[🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)  
+
+## 📌 Background & Overview
+### 🚀 Purpose of this Project & Business Question 
+This project explores user behavior on an e-commerce platform using Google Analytics data in BigQuery. The main goal is to uncover actionable insights that answer key business questions, such as:
+1. Which marketing channels bring the most valuable visitors?
+2. How do users navigate the site from browsing products to completing purchases?
+3. What are the conversion rates at different stages of the purchase process?
+4. Which products are driving the most revenue and which combinations are frequently purchased together?
+
+The results of this project aim to help e-commerce businesses make data-driven decisions to optimize marketing campaigns, improve user experience, and boost sales.
+
+### 👤 Target Audience 
+This project is designed for professionals who need insights into online customer behavior, including:
+1. Business analysts and data teams in e-commerce companies
+2. Marketing specialists aiming to optimize campaign effectiveness
+3. Product managers monitoring product performance and user engagement
+4. Anyone interested in applying BigQuery and SQL for practical data analytics
 
 ---
 
-## 📊 Dataset
+## 📂 Dataset Description & Data Structure
 
 - **Source:** [bigquery-public-data](https://console.cloud.google.com/marketplace/details/google/ga360-sample)
-- **Dataset:** `ga_sessions_*`
-- **Folder:** `ga_sessions`
+- **Dataset table:** `ga_sessions_*` (folder: `ga_sessions`)
 - **Description:**  
-  This dataset contains sample Google Analytics data collected from an actual E-commerce website. It includes user sessions, transactions, traffic sources, device details, geographic data, and more, providing a comprehensive view of user interactions.
-
----
-
-## 🚀 Objectives
-
-- Analyze overall website traffic trends
-- Identify the most valuable traffic sources
-- Examine conversion rates and purchase funnels
-- Analyze product performance and top-selling items
-- Provide actionable insights for marketing and business strategy
+This dataset contains anonymized sample Google Analytics data from an actual e-commerce website. It includes:
+  - User sessions: information about visits, session duration, pageviews
+  - Transactions: purchases made by users
+  - Traffic sources: channels through which users accessed the site
+  - Device & geo information: device category, country, region
+  - Product interactions: product views, add-to-cart events, purchases
+- Important Note on ga_sessions table in BigQuery:
+  - Each row in `ga_sessions_*` represents a user session, i.e., a single visit to the website by a unique user.
+  - The dataset tracks session-level metrics, including total pageviews, transactions, and revenue, as well as detailed hits like product interactions.
+  - The dataset allows analysis at both session and product levels, supporting questions like conversion rates, cohort analysis, and product performance.
 
 ---
 

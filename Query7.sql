@@ -1,39 +1,26 @@
-SELECT 
-      tb2.v2ProductName AS other_purchased_products
-      ,SUM(tb2.productQuantity) AS quantity
-FROM
-(
-SELECT 
-      DISTINCT fullVisitorId 
-      ,product.v2ProductName
-      -- ,product.productRevenue
-      -- ,product.productQuantity
-FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`,
-UNNEST(hits) AS hits,
-UNNEST (hits.product) AS product
-WHERE 1=1
-      AND product.productRevenue is not null
-      AND product.v2ProductName = "YouTube Men's Vintage Henley"
-      AND totals.transactions >=1
-) AS tb1
-LEFT JOIN 
-(
-SELECT 
-      fullVisitorId 
-      ,product.v2ProductName 
-      ,product.productQuantity
-FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`,
-UNNEST(hits) AS hits,
-UNNEST (hits.product) AS product 
-WHERE 1=1
-      AND product.productRevenue is not null
-      AND totals.transactions >=1
-) AS tb2
+with buyer_list as(
+    SELECT
+        distinct fullVisitorId  
+    FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`
+    , UNNEST(hits) AS hits
+    , UNNEST(hits.product) as product
+    WHERE product.v2ProductName = "YouTube Men's Vintage Henley"
+    AND totals.transactions>=1
+    AND product.productRevenue is not null
+)
 
-USING (fullVisitorId)
-WHERE tb2.v2ProductName <> "YouTube Men's Vintage Henley"
+SELECT
+  product.v2ProductName AS other_purchased_products,
+  SUM(product.productQuantity) AS quantity
+FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`
+, UNNEST(hits) AS hits
+, UNNEST(hits.product) as product
+JOIN buyer_list using(fullVisitorId)
+WHERE product.v2ProductName != "YouTube Men's Vintage Henley"
+ and product.productRevenue is not null
+ AND totals.transactions>=1
 GROUP BY other_purchased_products
-ORDER BY quantity DESC; 
+ORDER BY quantity DESC;
 
 
 

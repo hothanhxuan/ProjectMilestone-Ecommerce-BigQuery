@@ -54,7 +54,7 @@ This dataset contains anonymized sample Google Analytics data from an actual e-c
 ## ⚙️ Main Process - 8 main questions to write queries
 
 ### 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
-
+This analysis calculates the total number of visits, pageviews, and transactions for each month (January, February, and March) in 2017. By organizing results chronologically, it helps reveal trends in website traffic and user activity, as well as how performance evolves over time.
 #### 🧩 Queries ####
 ```sql
 SELECT    
@@ -71,7 +71,7 @@ ORDER BY month;
 ![Image](https://github.com/user-attachments/assets/bf7f5719-c7b7-4e79-9654-359a06c576ac)
 
 ### 2️⃣ Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC) ### 
-
+This query examines bounce rate across different traffic sources in July 2017, using the ratio of bounces to total visits. Ranking sources by traffic volume makes it easier to evaluate which channels attract engaged users and which ones lead to quick exits.
 #### 🧩 Queries ####
 ```sql
 SELECT  
@@ -87,7 +87,7 @@ ORDER BY total_visits DESC;
 ![Image](https://github.com/user-attachments/assets/4a43624f-d150-4231-b926-0a2836827bf1)
 
 ### 3️⃣ Revenue by traffic source by week, by month in June 2017 ###
-
+Revenue is analyzed by traffic source in June 2017 at both weekly and monthly levels. This breakdown provides a clearer view of how each channel contributes to revenue over time and highlights short-term versus overall performance patterns.
 #### 🧩 Queries ####
 ```sql
 with 
@@ -128,7 +128,7 @@ order by time_type;
 ![Image](https://github.com/user-attachments/assets/c28194b6-b33e-44bd-8573-a8be429bb0ce)
 
 ### 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017. ### 
-
+This analysis compares the average number of pageviews between purchasers and non-purchasers in June and July 2017. The goal is to understand differences in user engagement and how browsing behavior relates to purchase likelihood.
 #### 🧩 Queries ####
 ```sql
 with 
@@ -169,7 +169,7 @@ order by pd.month;
 ![Image](https://github.com/user-attachments/assets/95860552-160c-43d3-8604-73dc88b8dd09)
 
 ### 5️⃣ Average number of transactions per user that made a purchase in July 2017 ### 
-
+This query measures the average number of transactions per purchasing user in July 2017. It helps evaluate whether customers tend to make single or multiple purchases within the selected period.
 #### 🧩 Queries ####
 ```sql
 SELECT  
@@ -186,7 +186,7 @@ GROUP BY Month;
 ![Image](https://github.com/user-attachments/assets/bffce8df-8f25-4835-aa01-c58833e01a26)
 
 ### 6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017 ### 
-
+The average revenue generated per session is calculated for purchasing users in July 2017. This metric reflects how effectively each visit is converted into monetary value.
 #### 🧩 Queries ####
 ```sql
 SELECT  
@@ -203,7 +203,7 @@ GROUP BY Month;
 ![Image](https://github.com/user-attachments/assets/ac3c4233-3fc3-435d-a740-1f89c36c2c82)
 
 ### 7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered. ### 
-
+This analysis identifies products commonly purchased alongside "YouTube Men's Vintage Henley" in July 2017. The results highlight customer buying patterns and potential opportunities for cross-selling.
 #### 🧩 Queries ####
 ```sql
 with buyer_list as(
@@ -235,7 +235,7 @@ ORDER BY quantity DESC;
 
 ### 8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
 Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level. ### 
-
+A conversion funnel is constructed from product view to add-to-cart and purchase for January through March 2017. By calculating add-to-cart and purchase rates, this analysis helps pinpoint where users drop off and assess the efficiency of the purchasing journey.
 #### 🧩 Queries ####
 ```sql
 -- Code 1:using CTE  

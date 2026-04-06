@@ -1,4 +1,4 @@
-# ProjectMilestone-Ecommerce-BigQuery
+# Project 1: Understanding E-commerce User Behavior Using Google Analytics Data in BigQuery
 
 ## 💡 Overview
 

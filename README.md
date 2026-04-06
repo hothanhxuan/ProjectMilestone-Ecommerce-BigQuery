@@ -2,7 +2,7 @@
 
 ## 💡 Overview
 
-**ProjectMilestone-Ecommerce-BigQuery** is a data analytics project focused on understanding and analyzing user behavior for an E-commerce company. This project uses a publicly available Google Analytics dataset hosted on BigQuery to explore website traffic, conversion funnels, and marketing performance.
+**This Project Milestone** is a data analytics project focused on understanding and analyzing user behavior for an E-commerce company. This project uses a publicly available Google Analytics dataset hosted on BigQuery to explore website traffic, conversion funnels, and marketing performance.
 
 ---
 
